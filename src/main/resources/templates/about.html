@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Sobre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 700px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        
+        .endpoints {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .endpoint {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 3px;
+        }
+        
+        .method {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #667eea;
+            color: white;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+        
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        a:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${title}">Sobre</h1>
+        
+        <p th:text="${description}">Este é um projeto Spring Boot com Maven, SQLite e Thymeleaf</p>
+        
+        <h2>📚 Documentação</h2>
+        <p>Este projeto foi criado com uma estrutura completa de Spring Boot, incluindo:</p>
+        
+        <ul style="color: #666; line-height: 2; margin-left: 20px;">
+            <li><strong>Controllers:</strong> Manipulam requisições HTTP</li>
+            <li><strong>Services:</strong> Contêm a lógica de negócio</li>
+            <li><strong>Repositories:</strong> Gerenciam acesso aos dados</li>
+            <li><strong>Models:</strong> Representam as entidades do banco de dados</li>
+            <li><strong>Templates:</strong> Views renderizadas com Thymeleaf</li>
+        </ul>
+        
+        <h2>🔌 API REST Endpoints</h2>
+        <div class="endpoints">
+            <div class="endpoint">
+                <span class="method">POST</span>
+                <code>/api/users</code> - Criar novo usuário
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span>
+                <code>/api/users</code> - Listar todos os usuários
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span>
+                <code>/api/users/{id}</code> - Obter usuário específico
+            </div>
+            <div class="endpoint">
+                <span class="method">PUT</span>
+                <code>/api/users/{id}</code> - Atualizar usuário
+            </div>
+            <div class="endpoint">
+                <span class="method">DELETE</span>
+                <code>/api/users/{id}</code> - Deletar usuário
+            </div>
+        </div>
+        
+        <h2>💾 Banco de Dados</h2>
+        <p>O projeto utiliza <code>SQLite</code> como banco de dados. O arquivo <code>nivel.db</code> será criado automaticamente na raiz do projeto quando a aplicação iniciar.</p>
+        
+        <h2>🚀 Para Iniciar</h2>
+        <p>Execute o comando:</p>
+        <code style="display: block; background: #222; color: #0f0; padding: 10px; border-radius: 5px; margin: 10px 0;">mvn spring-boot:run</code>
+        
+        <p>A aplicação estará disponível em: <code>http://localhost:8080</code></p>
+        
+        <a href="/">← Voltar</a>
+    </div>
+</body>
+</html>
